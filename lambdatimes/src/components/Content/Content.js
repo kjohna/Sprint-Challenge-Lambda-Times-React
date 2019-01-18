@@ -48,13 +48,14 @@ export default class Content extends Component {
     } else {
       filteredCards = this.state.cards
         .filter(card => {
-          card.tab === this.state.selected;
+          return card.tab === this.state.selected;
         });
     }
     return filteredCards;
   };
 
   render() {
+    console.log('content render running');
     return (
       <div className="content-container">
         {/* 

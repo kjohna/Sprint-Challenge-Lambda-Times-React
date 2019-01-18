@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 
 const Tabs = props => {
   const tabs = props.tabs.map(tab => {
+    return (
     <Tab 
       selectTabHandler={props.selectTabHandler}
       selectedTab={props.selectedTab}
       tab={tab}
       key={tab}
     />
+    );
   });
 
   return (
