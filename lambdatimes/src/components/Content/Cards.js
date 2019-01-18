@@ -8,6 +8,7 @@ const Cards = props => {
       <Card card={card} key={i} />
     );
   })
+  // console.log(props);
   return (
     <div className="cards-container">
       {/* Using the cards prop, map over the list creating a new Card component for each passing the card as the only prop*/}
@@ -19,21 +20,11 @@ const Cards = props => {
 // Make sure you include prop types for all of your incoming props
 
 Cards.propTypes = {
-  cards: PropTypes.shape({
-    author: PropTypes.string,
-    headline: PropTypes.string,
-    img: PropTypes.string,
-    tab: PropTypes.string
-  })
+  cards: PropTypes.array
 }
 
 Cards.defaultProps = {
-  cards: {
-    author: "",
-    headline: "",
-    img: "",
-    tab: ""
-  }
+  cards: []
 }
 
 export default Cards;

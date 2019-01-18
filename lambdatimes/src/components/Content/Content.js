@@ -55,7 +55,7 @@ export default class Content extends Component {
   };
 
   render() {
-    console.log('content render running');
+    // console.log('content render running');
     return (
       <div className="content-container">
         {/* 
