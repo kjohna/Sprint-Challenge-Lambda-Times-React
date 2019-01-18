@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from './Card';
+import PropTypes from 'prop-types';
 
 const Cards = props => {
-  const cards = props.cards.map(card =>{
+  const cards = props.cards.map((card, i) =>{
     return (
-      <Card card={card} />
+      <Card card={card} key={i} />
     );
   })
   return (
@@ -16,5 +17,23 @@ const Cards = props => {
 }
 
 // Make sure you include prop types for all of your incoming props
+
+Cards.propTypes = {
+  cards: PropTypes.shape({
+    author: PropTypes.string,
+    headline: PropTypes.string,
+    img: PropTypes.string,
+    tab: PropTypes.string
+  })
+}
+
+Cards.defaultProps = {
+  cards: {
+    author: "",
+    headline: "",
+    img: "",
+    tab: ""
+  }
+}
 
 export default Cards;
