@@ -36,7 +36,7 @@ class Login extends React.Component {
             placeholder="Password"
             name="passwordInput"
             value={this.state.passwordInput}
-            onchange={this.handleInput}
+            onChange={this.handleInput}
             autoComplete="off"
           />
           <input 

@@ -74,18 +74,22 @@ const TBCRSpan = styled.span`
   cursor: pointer;
 `
 
-const TopBar = () => {
+const TopBar = (props) => {
+  let logInText = "LOG IN";
+  if (props.loggedIn) {
+    logInText = "LOG OUT";
+  }
   return (
-    <TopBarStyled>
-      <TopBarContainerStyled>
+    <TopBarStyled handleLogout={props.handleLogout}>
+      <TopBarContainerStyled handleLogout={props.handleLogout}>
         <TBContainerLeft>
           <TBCLSpan>TOPICS</TBCLSpan><TBCLSpan>SEARCH</TBCLSpan>
         </TBContainerLeft>
         <TBContainerCenter>
           <TBCCSpan>GENERAL</TBCCSpan><TBCCSpan>BROWNBAG</TBCCSpan><TBCCSpan>RANDOM</TBCCSpan><TBCCSpan>MUSIC</TBCCSpan><TBCCSpan>ANNOUNCEMENTS</TBCCSpan>
         </TBContainerCenter>
-        <TopBarContainerRight>
-          <TBCRSpan>LOG IN</TBCRSpan>
+        <TopBarContainerRight handleLogout={props.handleLogout}>
+          <TBCRSpan onClick={props.handleLogout}>{logInText}</TBCRSpan>
         </TopBarContainerRight>
       </TopBarContainerStyled>
     </TopBarStyled>

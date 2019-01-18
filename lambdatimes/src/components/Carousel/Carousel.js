@@ -41,7 +41,7 @@ export default class Carousel extends Component {
   }
 
   selectedImage = () => {
-    return <img src={this.state.currImg} style={{display: 'block'}} />
+    return <img src={this.state.currImg} style={{display: 'block'}} alt="" />
   }
   
   render(){
